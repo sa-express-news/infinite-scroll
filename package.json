@@ -1,0 +1,11 @@
+{
+  "name": "infinite-scroll",
+  "version": "0.0.1",
+  "description": "Proof-of-concept infinite scroll implementation for the WCM.",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "author": "",
+  "license": "ISC"
+}
