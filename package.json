@@ -2,10 +2,21 @@
   "name": "infinite-scroll",
   "version": "0.0.1",
   "description": "Proof-of-concept infinite scroll implementation for the WCM.",
+  "repository": "https://github.com/sa-express-news/infinite-scroll",
   "main": "index.js",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "pretest": "tsc",
+    "test": "mocha build/ --recursive"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chai": "^4.0.4",
+    "@types/jsdom": "^11.0.2",
+    "@types/mocha": "^2.2.43",
+    "chai": "^4.1.2",
+    "jsdom": "^11.2.0",
+    "mocha": "^3.5.3"
+  }
 }
