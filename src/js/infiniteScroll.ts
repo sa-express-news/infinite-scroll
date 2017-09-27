@@ -2,17 +2,32 @@ import * as scroll from './scroll';
 
 // Load Hearst jwplayer player when page loads, in case we need it
 
-const jwScript = scroll.createHDNPlayerScript(document);
-document.head.appendChild(jwScript);
+const infiniteScroll = (): void => {
+    const jwScript = scroll.createHDNPlayerScript(document);
+    document.head.appendChild(jwScript);
 
-// Build a queue of related links/story URLS to hit
+    // Build a queue of related links/story URLS to hit
 
-// - Check if there's a related stories sidebar, because it's usually got more relevant content
+    let relatedATags = [];
+    let relatedLinkURLs: string[] = [];
 
-if (scroll.containsSelector(document.body, 'div.collection.article-related')) {
-    //Take all the story links in the sidebar
-    const links = document.querySelector('div.article-related').querySelectorAll('a');
+    // - Check if there's a related stories sidebar, because it's usually got more relevant content
+
+    if (scroll.containsSelector(document.body, 'div.collection.article-related')) {
+        //Take all the story links in the sidebar
+        relatedATags = scroll.deduplicateElementsOnAttribute(document.querySelector('div.article-related').querySelectorAll('a'), 'href');
+
+    } else {
+        //Take all the story links at the bottom of the page
+        relatedATags = scroll.deduplicateElementsOnAttribute(document.querySelector('div.article-sections').querySelectorAll('a'), 'href');
+    }
+
+    relatedLinkURLs = relatedATags.map((tag => tag.href));
+
+    console.log(`Infinite scroll links: ${relatedLinkURLs}`);
 }
+
+
 
 // Immediately request the first story in the queue
 
