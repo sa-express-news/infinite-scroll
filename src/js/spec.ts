@@ -58,13 +58,18 @@ describe('Infinite Scroll', () => {
 
                 try {
                     const html = await scroll.fetchPageHTML('http://httpstat.us/500');
-                    console.log(html);
                 } catch (e) {
                     err = e;
                 }
 
                 stub.restore();
                 assert.typeOf(err, 'Error');
+            });
+        });
+        describe('fetch succeeds', () => {
+            it('returns a promise which resolves to a string', async () => {
+                const html = await scroll.fetchPageHTML('http://example.com');
+                assert.isString(html);
             });
         });
     });
