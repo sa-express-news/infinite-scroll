@@ -7,7 +7,7 @@
   "scripts": {
     "build": "tsc",
     "pretest": "tsc",
-    "test": "mocha build/ --recursive"
+    "test": "mocha build/**/spec.js"
   },
   "author": "",
   "license": "ISC",
