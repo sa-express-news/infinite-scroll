@@ -13,44 +13,42 @@
 
 // Fire a setup function on the new page's HTML
 
-    //Setup
+//Setup
 
-        // (Maybe) pop the new story's URL onto the history stack
+// (Maybe) pop the new story's URL onto the history stack
 
-        // Ping Google Analytics to register a page view
+// Ping Google Analytics to register a page view
 
-        // Ping the paywall to register another view
+// Ping the paywall to register another view
 
-        // Run any other necessary page-load code
+// Run any other necessary page-load code
 
-        // Check for the presence of a jwplayer container
+// Check for the presence of a jwplayer container
 
-            // If jwplayer container exists
+// If jwplayer container exists
 
-                // Parse the script tag inside the jwplayer container to find video sources
+// Parse the script tag inside the jwplayer container to find video sources
 
-                // Delete, target or replace the container
+// Delete, target or replace the container
 
-                // Target the container (or the new one you made) with the jwplayer API library,
-                // using the source file parsed from the script to add the video
+// Target the container (or the new one you made) with the jwplayer API library,
+// using the source file parsed from the script to add the video
 
-                // Add any necessary jwplayer view tracking code
+// Add any necessary jwplayer view tracking code
 
-        // Do the check - append move for other tricky items (slideshows, iframes, freeforms)
+// Do the check - append move for other tricky items (slideshows, iframes, freeforms)
 
 // Article successfully appended - check if the queue contains another article links
 
-    // Queue contains another article
+// Queue contains another article
 
-        // Set up (unless it'll keep working naturally) another throttled scroll listener
+// Set up (unless it'll keep working naturally) another throttled scroll listener
 
-        // Repeat the request, append, set up loop at appropriate page scroll threshold
+// Repeat the request, append, set up loop at appropriate page scroll threshold
 
-    // Queue is empty
+// Queue is empty
 
-        // Append a link back to EN at the end of the page?
-
-
+// Append a link back to EN at the end of the page?
 
 
 
@@ -58,20 +56,28 @@
 
 
 
+export const createHDNPlayerScript = (document: Document): HTMLScriptElement => {
+    const script = document.createElement('script');
+    script.src = 'https://content.jwplatform.com/libraries/uVzyVL6s.js';
+    return script;
+}
 
 
+export const containsSelector = (element: Element, selector: string): boolean => {
+    return element.querySelector(selector) !== null;
+}
 
+export const fetchPage = async (page: string): Promise<string> => {
+    try {
+        return await parseResponseText(await fetch(page));
+    } catch (e) {
+        throw e;
+    }
+}
 
-
-
-// const fetchPage = async (page: string): Promise<string> => {
-
-//     return await parseResponseText(await fetch(page));
-// }
-
-// const parseResponseText = async (response: Response): Promise<string> => {
-//     return await response.text();
-// }
+const parseResponseText = async (response: Response): Promise<string> => {
+    return await response.text();
+}
 
 // const appendHTMLAfterElement = (element: Element, html: string): void => {
 //     const newHTML = document.createElement('div');
@@ -102,11 +108,6 @@
 // //     return element.getElementsByTagName('script');
 // // }
 
-// const addHDNPlayer = (document: Document): void => {
-//     const script = document.createElement('script');
-//     script.src = 'https://content.jwplatform.com/libraries/uVzyVL6s.js';
-//     document.head.appendChild(script);
-// }
 
 // const createJWVideo = (window: Window): void => {
 //     if (window.jwplayer) {
