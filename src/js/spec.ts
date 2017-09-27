@@ -1,5 +1,8 @@
 import 'mocha';
 import * as chai from 'chai';
+import * as nock from 'nock';
+import * as sinon from 'sinon';
+import * as fetch from 'node-fetch';
 import { JSDOM } from 'jsdom';
 
 import * as scroll from './scroll';
@@ -10,6 +13,15 @@ const assert = chai.assert;
 let dom = new JSDOM(samplePageHTML);
 let window = dom.window;
 let document = window.document;
+
+let fakeServer;
+
+before(() => {
+    fakeServer = nock('http://example.com')
+        .persist()
+        .get('/')
+        .reply(200, `<!DOCTYPE html><html><head></head><body></body></html>`);
+});
 
 beforeEach(() => {
     let dom = new JSDOM(samplePageHTML);
@@ -36,12 +48,24 @@ describe('Infinite Scroll', () => {
             assert.isFalse(scroll.containsSelector(document.body, 'span#fake-id-foobar'));
         });
     });
-    describe('fetchPage', () => {
+    describe('fetchPageHTML', () => {
         describe('fetch fails', () => {
             it('throws an error', async () => {
-                const string = await scroll.fetchPage('https://kiafarhang.com');
-                assert.isTrue(true);
-            })
-        })
-    })
+
+                const stub = sinon.stub(fetch, 'default');
+                stub.throws();
+                let err;
+
+                try {
+                    const html = await scroll.fetchPageHTML('http://httpstat.us/500');
+                    console.log(html);
+                } catch (e) {
+                    err = e;
+                }
+
+                stub.restore();
+                assert.typeOf(err, 'Error');
+            });
+        });
+    });
 });

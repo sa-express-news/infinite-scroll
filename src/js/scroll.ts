@@ -1,3 +1,8 @@
+
+
+//This is only so we can use fetch in node and therefore test our fetch-related code
+import fetch from 'node-fetch';
+
 // Load Hearst jwplayer player when page loads, in case we need it
 
 // Build a queue of related links/story URLS to hit
@@ -67,9 +72,10 @@ export const containsSelector = (element: Element, selector: string): boolean =>
     return element.querySelector(selector) !== null;
 }
 
-export const fetchPage = async (page: string): Promise<string> => {
+export const fetchPageHTML = async (page: string): Promise<string> => {
     try {
-        return await parseResponseText(await fetch(page));
+        const response = await fetch(page);
+        return await response.text();
     } catch (e) {
         throw e;
     }
