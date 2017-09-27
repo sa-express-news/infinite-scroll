@@ -11,7 +11,7 @@ document.head.appendChild(jwScript);
 
 if (scroll.containsSelector(document.body, 'div.collection.article-related')) {
     //Take all the story links in the sidebar
-    const links = document.querySelector('div.collection.article-related').querySelectorAll('a');
+    const links = document.querySelector('div.article-related').querySelectorAll('a');
 }
 
 // Immediately request the first story in the queue

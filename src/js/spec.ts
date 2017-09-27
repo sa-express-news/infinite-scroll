@@ -73,4 +73,30 @@ describe('Infinite Scroll', () => {
             });
         });
     });
+    describe('deduplicateElementsOnAttribute', () => {
+        it('returns an array', () => {
+            const links = document.querySelector('div.article-related').querySelectorAll('a');
+
+            assert.isArray(scroll.deduplicateElementsOnAttribute(links, 'href'));
+
+        });
+        it('the array contains the same types of elements passed into it', () => {
+            const links = document.querySelector('div.article-related').querySelectorAll('a');
+
+            const dedupLinks = scroll.deduplicateElementsOnAttribute(links, 'href');
+
+            dedupLinks.forEach(link => {
+                assert.typeOf(link, 'HTMLAnchorElement');
+            });
+        });
+        it('any elements with the same attribute are removed', () => {
+            const links = document.querySelector('div.article-related').querySelectorAll('a');
+
+            const dedupLinks = scroll.deduplicateElementsOnAttribute(links, 'href');
+
+            //I know there are four unique links out of 8 <a> tags in the sample page HTML
+
+            assert.strictEqual(dedupLinks.length, 4);
+        });
+    });
 });
