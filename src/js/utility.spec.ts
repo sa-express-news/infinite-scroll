@@ -6,7 +6,7 @@ import * as fetch from 'node-fetch';
 import { JSDOM } from 'jsdom';
 
 import * as utility from './utility';
-import samplePageHTML from './sampleENPage';
+import samplePageHTML from './sample-pages/ENPage1';
 
 const assert = chai.assert;
 
@@ -29,7 +29,7 @@ beforeEach(() => {
     let document = window.document;
 })
 
-describe('Infinite Scroll', () => {
+describe('Utility code', () => {
     describe('createHDNPlayerScript', () => {
         it('returns an HTMLScriptElement', () => {
             assert.typeOf(utility.createHDNPlayerScript(document), 'HTMLScriptElement');

@@ -1,4 +1,4 @@
-const samplePageHTML = `
+const ENPage1 = `
   <!-- hearst/home/commentsInit.tpl -->
 
 <!-- e hearst/home/commentsInit.tpl -->
@@ -1701,4 +1701,4 @@ const samplePageHTML = `
 <!-- e src/business/templates/hearst/common/footer.tpl -->
 `;
 
-export default samplePageHTML;
+export default ENPage1;
