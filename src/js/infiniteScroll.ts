@@ -2,29 +2,42 @@ import * as scroll from './scroll';
 
 // Load Hearst jwplayer player when page loads, in case we need it
 
-const infiniteScroll = (): void => {
+const loadJW = (document: Document): void => {
     const jwScript = scroll.createHDNPlayerScript(document);
     document.head.appendChild(jwScript);
+}
 
-    // Build a queue of related links/story URLS to hit
+// Build a queue of related links/story URLS to hit
+const buildLinkQueue = (document: Document): void => {
+
+    const RELATED_SIDEBAR_SELECTOR = 'div.collection.article-related';
+    const BOTTOM_PAGE_STORY_LINKS_SELECTOR = 'div.article-sections';
+
 
     let relatedATags = [];
     let relatedLinkURLs: string[] = [];
 
     // - Check if there's a related stories sidebar, because it's usually got more relevant content
 
-    if (scroll.containsSelector(document.body, 'div.collection.article-related')) {
+    if (scroll.containsSelector(document.body, RELATED_SIDEBAR_SELECTOR)) {
         //Take all the story links in the sidebar
-        relatedATags = scroll.deduplicateElementsOnAttribute(document.querySelector('div.article-related').querySelectorAll('a'), 'href');
+        relatedATags = scroll.deduplicateElementsOnAttribute(document.querySelector(RELATED_SIDEBAR_SELECTOR).querySelectorAll('a'), 'href');
 
     } else {
         //Take all the story links at the bottom of the page
-        relatedATags = scroll.deduplicateElementsOnAttribute(document.querySelector('div.article-sections').querySelectorAll('a'), 'href');
+        relatedATags = scroll.deduplicateElementsOnAttribute(document.querySelector(BOTTOM_PAGE_STORY_LINKS_SELECTOR).querySelectorAll('a'), 'href');
     }
 
     relatedLinkURLs = relatedATags.map((tag => tag.href));
 
     console.log(`Infinite scroll links: ${relatedLinkURLs}`);
+}
+
+const infiniteScroll = (): void => {
+
+    loadJW(document);
+    buildLinkQueue(document);
+
 }
 
 
