@@ -48,21 +48,30 @@ export const addNewArticle = (element: Element, articleHTML: string): void => {
         throw new Error(`Infinite scroll: can't find area to append next article`);
     }
 
+    const holdingDiv = element.ownerDocument.createElement('div');
+    holdingDiv.innerHTML = articleHTML;
+    const articleContent = holdingDiv.querySelector('div.article-wrap');
+
+    const articleContentHTML = articleContent.outerHTML;
+
     const div = element.ownerDocument.createElement('div');
     div.classList.add('infinite-scroll-story');
-    div.innerHTML = articleHTML;
+    div.innerHTML = articleContentHTML;
     articleBody.parentElement.insertBefore(div, element.nextSibling);
 
 }
 
-const infiniteScroll = (): void => {
+export const infiniteScroll = async (): Promise<void> => {
 
     loadJW(document);
-    buildLinkQueue(document.body);
+    const linkQueue = buildLinkQueue(document.body);
+
+    const firstStory = await utility.fetchPageHTML(linkQueue[0]);
+
+    addNewArticle(document.body, firstStory);
 
 }
 
-// document.addEventListener('DOMContentLoaded', infiniteScroll);
 
 // Immediately request the first story in the queue
 

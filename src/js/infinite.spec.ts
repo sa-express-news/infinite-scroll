@@ -103,8 +103,8 @@ describe('Infinite Scroll', () => {
                 assert.isTrue(newDiv.classList.contains('infinite-scroll-story'));
             });
             it('the top-level element of the div is a div.article-wrap', () => {
-                // assert.typeOf(newDiv.firstChild, 'HTMLDivElement');
-                // assert.isTrue(newDiv.classList.contains('article-wrap'));
+                assert.typeOf(newDiv.firstElementChild, 'HTMLDivElement');
+                assert.isTrue(newDiv.firstElementChild.classList.contains('article-wrap'));
             });
         });
     });
