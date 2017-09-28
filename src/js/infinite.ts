@@ -2,15 +2,15 @@ import * as utility from './utility';
 
 // Load Hearst jwplayer player when page loads, in case we need it
 
-const loadJW = (document: Document): void => {
+export const loadJW = (document: Document): void => {
     const jwScript = utility.createHDNPlayerScript(document);
     document.head.appendChild(jwScript);
 }
 
 // Build a queue of related links/story URLS to hit
-const buildLinkQueue = (document: Document): void => {
+export const buildLinkQueue = (document: Document): string[] => {
 
-    const RELATED_SIDEBAR_SELECTOR = 'div.collection.article-related';
+    const RELATED_SIDEBAR_SELECTOR = 'div.article-related';
     const BOTTOM_PAGE_STORY_LINKS_SELECTOR = 'div.article-sections';
 
 
@@ -28,7 +28,12 @@ const buildLinkQueue = (document: Document): void => {
         relatedATags = utility.deduplicateElementsOnAttribute(document.querySelector(BOTTOM_PAGE_STORY_LINKS_SELECTOR).querySelectorAll('a'), 'href');
     }
 
-    relatedLinkURLs = relatedATags.map((tag => tag.href));
+    const allURLs = relatedATags.map((tag => tag.href));
+
+    //Purge the list of links to sections like /sports/spurs/ - we only want articles, which all end in .php
+    relatedLinkURLs = allURLs.filter((link => link.indexOf('.php') > -1));
+
+    return relatedLinkURLs;
 
 }
 
@@ -39,7 +44,7 @@ const infiniteScroll = (): void => {
 
 }
 
-document.addEventListener('DOMContentLoaded', infiniteScroll);
+// document.addEventListener('DOMContentLoaded', infiniteScroll);
 
 // Immediately request the first story in the queue
 
