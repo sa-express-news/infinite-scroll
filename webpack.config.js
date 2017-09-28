@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-    entry: './src/js/infinite.ts',
+    entry: './src/js/en-infinite-scroll/en-infinite-scroll.ts',
     module: {
         rules: [
             {
