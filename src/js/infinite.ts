@@ -8,7 +8,7 @@ export const loadJW = (document: Document): void => {
 }
 
 // Build a queue of related links/story URLS to hit
-export const buildLinkQueue = (document: Document): string[] => {
+export const buildLinkQueue = (element: Element): string[] => {
 
     const RELATED_SIDEBAR_SELECTOR = 'div.article-related';
     const BOTTOM_PAGE_STORY_LINKS_SELECTOR = 'div.article-sections';
@@ -19,13 +19,13 @@ export const buildLinkQueue = (document: Document): string[] => {
 
     // - Check if there's a related stories sidebar, because it's usually got more relevant content
 
-    if (utility.containsSelector(document.body, RELATED_SIDEBAR_SELECTOR)) {
+    if (utility.containsSelector(element, RELATED_SIDEBAR_SELECTOR)) {
         //Take all the story links in the sidebar
-        relatedATags = utility.deduplicateElementsOnAttribute(document.querySelector(RELATED_SIDEBAR_SELECTOR).querySelectorAll('a'), 'href');
+        relatedATags = utility.deduplicateElementsOnAttribute(element.querySelector(RELATED_SIDEBAR_SELECTOR).querySelectorAll('a'), 'href');
 
     } else {
         //Take all the story links at the bottom of the page
-        relatedATags = utility.deduplicateElementsOnAttribute(document.querySelector(BOTTOM_PAGE_STORY_LINKS_SELECTOR).querySelectorAll('a'), 'href');
+        relatedATags = utility.deduplicateElementsOnAttribute(element.querySelector(BOTTOM_PAGE_STORY_LINKS_SELECTOR).querySelectorAll('a'), 'href');
     }
 
     const allURLs = relatedATags.map((tag => tag.href));
@@ -40,7 +40,7 @@ export const buildLinkQueue = (document: Document): string[] => {
 const infiniteScroll = (): void => {
 
     loadJW(document);
-    buildLinkQueue(document);
+    buildLinkQueue(document.body);
 
 }
 
