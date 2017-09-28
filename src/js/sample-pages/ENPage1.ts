@@ -1,5 +1,8 @@
+//URL: http://www.expressnews.com/sports/spurs/article/Popovich-s-political-commentary-polls-well-with-12230231.php
+
+
 const ENPage1 = `
-  <!-- hearst/home/commentsInit.tpl -->
+    <!-- hearst/home/commentsInit.tpl -->
 
 <!-- e hearst/home/commentsInit.tpl -->
 
@@ -12,7 +15,7 @@ const ENPage1 = `
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <meta name="ispremium" content="1" />
         <meta name="article:published_time" content="2017-09-26 19:59:25" />        <meta name="article:modified_time" content="2017-09-26 20:01:10" />                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <!-- generated at 2017-09-27 10:02:47 on p-pwcm4 running vr9.5.0.15 -->
+        <!-- generated at 2017-09-28 11:24:58 on p-pwcm5 running vr9.5.0.15 -->
         <!-- hearst/common/hdn_datalayer_header.tpl -->
 <script type="text/javascript">
     // <![CDATA[
@@ -117,7 +120,7 @@ const ENPage1 = `
 <script type="text/javascript">
     // <![CDATA[
     // document.domain = "hearstnp.com";
-    var requestTime = new Date(1506524567 * 1000);
+    var requestTime = new Date(1506615898 * 1000);
 
                                 
                     
@@ -1367,8 +1370,38 @@ const ENPage1 = `
                     <div class="rel-thumb">
                 <!-- common/display_image.tpl -->
 <a class="without_u  hdn-analytics"
+    href="/sports/spurs/article/Spurs-camp-a-thrill-for-Gay-after-long-rehab-12234689.php"
+     data-hdn-analytics="recent_news|article-12234689|collection-22811|1">
+    <img src="http://ww4.hdnux.com/photos/66/23/76/14237631/3/premium_landscape.jpg"
+        alt="Spurs’ Rudy Gay poses for photos during media day at the team’s practice facility, Monday, Sept. 25, 2017, in San Antonio." border="0" />
+</a>
+    <!-- e display_image.tpl -->
+            </div>
+                    <a class=" hdn-analytics" 
+                href="/sports/spurs/article/Spurs-camp-a-thrill-for-Gay-after-long-rehab-12234689.php"
+                data-hdn-analytics="recent_news|article-12234689|collection-22811|1">Spurs camp a thrill for Gay after long rehab</a>
+        </li>
+                    <li class="news-item ">
+                    <div class="rel-thumb">
+                <!-- common/display_image.tpl -->
+<a class="without_u  hdn-analytics"
+    href="/sports/spurs/article/For-Spurs-Ginobili-basketball-is-still-a-joy-12234647.php"
+     data-hdn-analytics="recent_news|article-12234647|collection-22811|2">
+    <img src="http://ww4.hdnux.com/photos/61/32/26/12952979/11/premium_landscape.jpg"
+        alt="San Antonio Spurs’ Manu Ginobili sits on the bench during introductions before Game 4 of the Western Conference finals against the Golden State Warriors on May 22, 2017 at the AT&amp;T Center." border="0" />
+</a>
+    <!-- e display_image.tpl -->
+            </div>
+                    <a class=" hdn-analytics" 
+                href="/sports/spurs/article/For-Spurs-Ginobili-basketball-is-still-a-joy-12234647.php"
+                data-hdn-analytics="recent_news|article-12234647|collection-22811|2">For Spurs’ Ginobili, basketball is still a joy</a>
+        </li>
+                    <li class="news-item ">
+                    <div class="rel-thumb">
+                <!-- common/display_image.tpl -->
+<a class="without_u  hdn-analytics"
     href="/sports/spurs/article/Popovich-s-political-commentary-polls-well-with-12230231.php"
-     data-hdn-analytics="recent_news|article-12230231|collection-22811|1">
+     data-hdn-analytics="recent_news|article-12230231|collection-22811|3">
     <img src="http://ww3.hdnux.com/photos/66/21/04/14225674/3/premium_landscape.jpg"
         alt="San Antonio Spurs coach Gregg Popovich speaks during a press conference during Spurs media day Monday September 25, 2017." border="0" />
 </a>
@@ -1376,14 +1409,14 @@ const ENPage1 = `
             </div>
                     <a class=" hdn-analytics" 
                 href="/sports/spurs/article/Popovich-s-political-commentary-polls-well-with-12230231.php"
-                data-hdn-analytics="recent_news|article-12230231|collection-22811|1">Popovich’s political commentary polls well with Spurs players</a>
+                data-hdn-analytics="recent_news|article-12230231|collection-22811|3">Popovich’s political commentary polls well with Spurs players</a>
         </li>
                     <li class="news-item ">
                     <div class="rel-thumb">
                 <!-- common/display_image.tpl -->
 <a class="without_u  hdn-analytics"
     href="/sports/spurs/article/Spurs-Gasol-sheds-weight-to-keep-up-12230198.php"
-     data-hdn-analytics="recent_news|article-12230198|collection-22811|2">
+     data-hdn-analytics="recent_news|article-12230198|collection-22811|4">
     <img src="http://ww4.hdnux.com/photos/66/21/01/14225535/5/premium_landscape.jpg"
         alt="San Antonio Spurs center Pau Gasol (16) takes part in media day at the team’s facility, Monday, Sept. 25, 2017, in San Antonio." border="0" />
 </a>
@@ -1391,37 +1424,7 @@ const ENPage1 = `
             </div>
                     <a class=" hdn-analytics" 
                 href="/sports/spurs/article/Spurs-Gasol-sheds-weight-to-keep-up-12230198.php"
-                data-hdn-analytics="recent_news|article-12230198|collection-22811|2">Spurs’ Gasol sheds weight to keep up ‘running, gunning’</a>
-        </li>
-                    <li class="news-item ">
-                    <div class="rel-thumb">
-                <!-- common/display_image.tpl -->
-<a class="without_u  hdn-analytics"
-    href="/sports/spurs/article/For-Spurs-Aldridge-make-or-break-season-awaits-12227719.php"
-     data-hdn-analytics="recent_news|article-12227719|collection-22811|3">
-    <img src="http://ww2.hdnux.com/photos/66/17/71/14220885/7/premium_landscape.jpg"
-        alt="San Antonio Spurs forward LaMarcus Aldridge (#12) walks in at Spurs media day Monday September 25, 2017." border="0" />
-</a>
-    <!-- e display_image.tpl -->
-            </div>
-                    <a class=" hdn-analytics" 
-                href="/sports/spurs/article/For-Spurs-Aldridge-make-or-break-season-awaits-12227719.php"
-                data-hdn-analytics="recent_news|article-12227719|collection-22811|3">For Spurs’ Aldridge, a make or break season awaits</a>
-        </li>
-                    <li class="news-item ">
-                    <div class="rel-thumb">
-                <!-- common/display_image.tpl -->
-<a class="without_u  hdn-analytics"
-    href="/sports/spurs/article/Off-Topic-conversation-Darrun-Hilliard-12226243.php"
-     data-hdn-analytics="recent_news|article-12226243|collection-22811|4">
-    <img src="http://ww3.hdnux.com/photos/66/16/73/14216942/3/premium_landscape.jpg"
-        alt="USA's small forward Darrun Hilliard II (L) drives the ball marked by Argentina's small forward Patricio Garino during their 2017 FIBA Americas Championship final match in Cordoba, Argentina, on Sept. 3, 2017." border="0" />
-</a>
-    <!-- e display_image.tpl -->
-            </div>
-                    <a class=" hdn-analytics" 
-                href="/sports/spurs/article/Off-Topic-conversation-Darrun-Hilliard-12226243.php"
-                data-hdn-analytics="recent_news|article-12226243|collection-22811|4">Off-Topic conversation: Darrun Hilliard</a>
+                data-hdn-analytics="recent_news|article-12230198|collection-22811|4">Spurs’ Gasol sheds weight to keep up ‘running, gunning’</a>
         </li>
         </ul>
  </div>
@@ -1533,31 +1536,31 @@ const ENPage1 = `
                                                                 <div class="column-wrap ">
                                                         <div class="column odd firstcolumn">
                                                                                                                                                                             <div class="header">
-                                                        <h4 class="kicker-link"><a   href="/sports/colleges/">Colleges</a></h4>
-                                                </div>
-                                                                                                                          <!-- common/display_image.tpl -->
-<a class="without_u  "
-    href="/sports/college_sports/aggies/article/Aggies-know-their-defense-needs-work-12230861.php"
-    >
-    <img src="http://ww1.hdnux.com/photos/66/21/37/14227448/3/premium_article_featured_articles.jpg"
-        alt="Arkansas Razorbacks running back Devwah Whaley (21) on a 21-yard run in the third quarter on Saturday, Sept. 23, 2017 in the Southwest Classic in Arlington, Texas. The Texas A&amp;M Aggies beat the Arkansas Razorbacks in overtime 50-43." border="0" />
-</a>
-    <!-- e display_image.tpl -->
-                                        <h2 class="headline"><a   href="/sports/college_sports/aggies/article/Aggies-know-their-defense-needs-work-12230861.php">Aggies know their defense needs work</a></h2>
-                                </div>
-                                                                                                <div class="column even ">
-                                                                                                                                                                            <div class="header">
                                                         <h4 class="kicker-link"><a   href="/sports/">Sports</a></h4>
                                                 </div>
                                                                                                                           <!-- common/display_image.tpl -->
 <a class="without_u  "
-    href="/sports/columnists/adam_zuvanich/article/Super-Steele-suddenly-struggling-12229712.php"
+    href="/sports/outdoors/article/Solid-season-predicted-for-archery-only-deer-12237548.php"
     >
-    <img src="http://ww1.hdnux.com/photos/66/14/35/14206792/7/premium_article_featured_articles.jpg"
-        alt="The Steele Knights take the field against Smithson Valley in high school football at Lenhoff Stadium on Friday, Sept. 22, 2017." border="0" />
+    <img src="http://ww4.hdnux.com/photos/66/25/67/14245327/5/premium_article_featured_articles.jpg"
+        alt="Texas’ 4-million-plus whitetail deer benefitted from favorable habitat conditions over the past months, meaning good prospects for the more than 100,000 hunters heading afield for the Sept. 30 statewide opening of archery-only deer season and start of the extended hunting season on about 25 million acres enrolled in the state’s Managed Lands Deer Program." border="0" />
 </a>
     <!-- e display_image.tpl -->
-                                        <h2 class="headline"><a   href="/sports/columnists/adam_zuvanich/article/Super-Steele-suddenly-struggling-12229712.php">Super Steele suddenly struggling</a></h2>
+                                        <h2 class="headline"><a   href="/sports/outdoors/article/Solid-season-predicted-for-archery-only-deer-12237548.php">Outdoors: Solid season predicted for archery-only deer hunters</a></h2>
+                                </div>
+                                                                                                <div class="column even ">
+                                                                                                                                                                            <div class="header">
+                                                        <h4 class="kicker-link"><a   href="/sports/colleges/">Colleges</a></h4>
+                                                </div>
+                                                                                                                          <!-- common/display_image.tpl -->
+<a class="without_u  "
+    href="/sports/colleges/article/College-basketball-recruiting-scandal-raises-more-12235693.php"
+    >
+    <img src="http://ww2.hdnux.com/photos/66/24/24/14238997/7/premium_article_featured_articles.jpg"
+        alt="St. Anthony’s Charles Bassey and teammates watch action against Virginia Episcopal School from the bench at the Nassau Community College gym in Garden City, N.Y, in February 2017." border="0" />
+</a>
+    <!-- e display_image.tpl -->
+                                        <h2 class="headline"><a   href="/sports/colleges/article/College-basketball-recruiting-scandal-raises-more-12235693.php">College basketball recruiting scandal raises more questions about</a></h2>
                                 </div>
                                                 </div>
                                                                                         <div class="column-wrap column-wrap-last">
@@ -1567,13 +1570,13 @@ const ENPage1 = `
                                                 </div>
                                                                                                                           <!-- common/display_image.tpl -->
 <a class="without_u  "
-    href="/sports/spurs/article/Popovich-s-political-commentary-polls-well-with-12230231.php"
+    href="/sports/spurs/article/Spurs-camp-a-thrill-for-Gay-after-long-rehab-12234689.php"
     >
-    <img src="http://ww3.hdnux.com/photos/66/21/04/14225674/3/premium_article_featured_articles.jpg"
-        alt="San Antonio Spurs coach Gregg Popovich speaks during a press conference during Spurs media day Monday September 25, 2017." border="0" />
+    <img src="http://ww4.hdnux.com/photos/66/23/76/14237631/3/premium_article_featured_articles.jpg"
+        alt="Spurs’ Rudy Gay poses for photos during media day at the team’s practice facility, Monday, Sept. 25, 2017, in San Antonio." border="0" />
 </a>
     <!-- e display_image.tpl -->
-                                        <h2 class="headline"><a   href="/sports/spurs/article/Popovich-s-political-commentary-polls-well-with-12230231.php">Popovich’s political commentary polls well with Spurs players</a></h2>
+                                        <h2 class="headline"><a   href="/sports/spurs/article/Spurs-camp-a-thrill-for-Gay-after-long-rehab-12234689.php">Spurs camp a thrill for Gay after long rehab</a></h2>
                                 </div>
                                                                                                 <div class="column even lastcolumn">
                                                                                                                                                                             <div class="header">
@@ -1581,13 +1584,13 @@ const ENPage1 = `
                                                 </div>
                                                                                                                           <!-- common/display_image.tpl -->
 <a class="without_u  "
-    href="/sports/spurs/article/Spurs-Gasol-sheds-weight-to-keep-up-12230198.php"
+    href="/sports/spurs/article/For-Spurs-Ginobili-basketball-is-still-a-joy-12234647.php"
     >
-    <img src="http://ww4.hdnux.com/photos/66/21/01/14225535/5/premium_article_featured_articles.jpg"
-        alt="San Antonio Spurs center Pau Gasol (16) takes part in media day at the team’s facility, Monday, Sept. 25, 2017, in San Antonio." border="0" />
+    <img src="http://ww4.hdnux.com/photos/61/32/26/12952979/11/premium_article_featured_articles.jpg"
+        alt="San Antonio Spurs’ Manu Ginobili sits on the bench during introductions before Game 4 of the Western Conference finals against the Golden State Warriors on May 22, 2017 at the AT&amp;T Center." border="0" />
 </a>
     <!-- e display_image.tpl -->
-                                        <h2 class="headline"><a   href="/sports/spurs/article/Spurs-Gasol-sheds-weight-to-keep-up-12230198.php">Spurs’ Gasol sheds weight to keep up ‘running, gunning’</a></h2>
+                                        <h2 class="headline"><a   href="/sports/spurs/article/For-Spurs-Ginobili-basketball-is-still-a-joy-12234647.php">For Spurs’ Ginobili, basketball is still a joy</a></h2>
                                 </div>
                                                 </div>
                                                 </div>
@@ -1699,6 +1702,7 @@ const ENPage1 = `
                         </body>
 </html>
 <!-- e src/business/templates/hearst/common/footer.tpl -->
+
 `;
 
 export default ENPage1;
