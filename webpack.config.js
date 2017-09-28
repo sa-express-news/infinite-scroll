@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
     entry: './src/js/infiniteScroll.ts',
@@ -11,6 +12,11 @@ module.exports = {
             }
         ]
     },
+    plugins: [
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': '"production"'
+        })
+    ],
     resolve: {
         extensions: [".tsx", ".ts", ".js"]
     },

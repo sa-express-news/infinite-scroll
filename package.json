@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "prebuild": "tsc",
-    "build": "./node_modules/.bin/webpack",
+    "build": "./node_modules/.bin/webpack -p",
     "pretest": "tsc",
     "test": "mocha build/**/spec.js"
   },
