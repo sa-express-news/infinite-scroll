@@ -1,9 +1,9 @@
-import * as scroll from './scroll';
+import * as utility from './utility';
 
 // Load Hearst jwplayer player when page loads, in case we need it
 
 const loadJW = (document: Document): void => {
-    const jwScript = scroll.createHDNPlayerScript(document);
+    const jwScript = utility.createHDNPlayerScript(document);
     document.head.appendChild(jwScript);
 }
 
@@ -19,18 +19,17 @@ const buildLinkQueue = (document: Document): void => {
 
     // - Check if there's a related stories sidebar, because it's usually got more relevant content
 
-    if (scroll.containsSelector(document.body, RELATED_SIDEBAR_SELECTOR)) {
+    if (utility.containsSelector(document.body, RELATED_SIDEBAR_SELECTOR)) {
         //Take all the story links in the sidebar
-        relatedATags = scroll.deduplicateElementsOnAttribute(document.querySelector(RELATED_SIDEBAR_SELECTOR).querySelectorAll('a'), 'href');
+        relatedATags = utility.deduplicateElementsOnAttribute(document.querySelector(RELATED_SIDEBAR_SELECTOR).querySelectorAll('a'), 'href');
 
     } else {
         //Take all the story links at the bottom of the page
-        relatedATags = scroll.deduplicateElementsOnAttribute(document.querySelector(BOTTOM_PAGE_STORY_LINKS_SELECTOR).querySelectorAll('a'), 'href');
+        relatedATags = utility.deduplicateElementsOnAttribute(document.querySelector(BOTTOM_PAGE_STORY_LINKS_SELECTOR).querySelectorAll('a'), 'href');
     }
 
     relatedLinkURLs = relatedATags.map((tag => tag.href));
 
-    console.log(`Infinite scroll links: ${relatedLinkURLs}`);
 }
 
 const infiniteScroll = (): void => {
@@ -40,13 +39,13 @@ const infiniteScroll = (): void => {
 
 }
 
-
+document.addEventListener('DOMContentLoaded', infiniteScroll);
 
 // Immediately request the first story in the queue
 
 // Pass the story to a function that returns only the HTML from headline to ending byline
 
-// Listen to scroll events (throttle to save performance) and wait until the reader is arbitrary
+// Listen to utility events (throttle to save performance) and wait until the reader is arbitrary
 // % down the page
 
 // Once reader reaches threshold, append next story to the bottom of the page.
@@ -82,9 +81,9 @@ const infiniteScroll = (): void => {
 
 // Queue contains another article
 
-// Set up (unless it'll keep working naturally) another throttled scroll listener
+// Set up (unless it'll keep working naturally) another throttled utility listener
 
-// Repeat the request, append, set up loop at appropriate page scroll threshold
+// Repeat the request, append, set up loop at appropriate page utility threshold
 
 // Queue is empty
 
