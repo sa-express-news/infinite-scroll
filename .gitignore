@@ -1,8 +1,11 @@
 # dependencies
 /node_modules
 
-#production
+#Typescript-compiled files
 /build
+
+#Webpack-compiled bundle for the browser
+/dist
 
 #npm error log
 npm-debug.log*

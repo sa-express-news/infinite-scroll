@@ -3,7 +3,11 @@
         "allowJs": true,
         "module": "commonjs",
         "outDir": "build/",
-        "target": "es6"
+        "target": "es3",
+        "lib": [
+            "dom",
+            "es2015"
+        ]
     },
     "include": [
         "src/**/*"

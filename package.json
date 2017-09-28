@@ -5,7 +5,8 @@
   "repository": "https://github.com/sa-express-news/infinite-scroll",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
+    "prebuild": "tsc",
+    "build": "./node_modules/.bin/webpack",
     "pretest": "tsc",
     "test": "mocha build/**/spec.js"
   },
@@ -21,7 +22,10 @@
     "jsdom": "^11.2.0",
     "mocha": "^3.5.3",
     "nock": "^9.0.21",
-    "sinon": "^4.0.0"
+    "sinon": "^4.0.0",
+    "ts-loader": "^2.3.7",
+    "typescript": "^2.5.3",
+    "webpack": "^3.6.0"
   },
   "dependencies": {
     "@types/node-fetch": "^1.6.7",
