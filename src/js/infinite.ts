@@ -37,6 +37,24 @@ export const buildLinkQueue = (element: Element): string[] => {
 
 }
 
+// Append a new article right after a given element's div.article-body
+
+export const addNewArticle = (element: Element, articleHTML: string): void => {
+    const ARTICLE_BODY_SELECTOR = 'div.article-body';
+    const ARTICLE_COMMENTS_SELECTOR = 'div.article-comments';
+
+    const articleBody = element.querySelector(ARTICLE_COMMENTS_SELECTOR);
+    if (articleBody === null) {
+        throw new Error(`Infinite scroll: can't find area to append next article`);
+    }
+
+    const div = element.ownerDocument.createElement('div');
+    div.classList.add('infinite-scroll-story');
+    div.innerHTML = articleHTML;
+    articleBody.parentElement.insertBefore(div, element.nextSibling);
+
+}
+
 const infiniteScroll = (): void => {
 
     loadJW(document);

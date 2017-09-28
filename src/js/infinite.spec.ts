@@ -16,18 +16,13 @@ let dom = new JSDOM(ENPage1);
 let window = dom.window;
 let document = window.document;
 
-// beforeEach(() => {
-//     let dom = new JSDOM(samplePageHTML);
-//     let window = dom.window;
-//     let document = window.document;
-// })
 
 describe('Infinite Scroll', () => {
     describe('loadJW', () => {
         it('adds the Hearst JW Player code to the head of the document', () => {
             infinite.loadJW(document);
             const scripts = document.head.getElementsByTagName('script');
-            const jwScript = Array.from(scripts).filter((script => script.src = 'https://content.jwplatform.com/libraries/uVzyVL6s.js'));
+            const jwScript = Array.from(scripts).filter((script => script.src === 'https://content.jwplatform.com/libraries/uVzyVL6s.js'));
 
             assert.isDefined(jwScript);
         });
@@ -70,6 +65,46 @@ describe('Infinite Scroll', () => {
             it('should not contain any extraneous links', () => {
                 const results = infinite.buildLinkQueue(document.body);
                 assert.lengthOf(results, 4);
+            });
+        });
+    });
+    describe('addNewArticle', () => {
+        beforeEach(() => {
+            let dom = new JSDOM(ENPage1);
+            let window = dom.window;
+            let document = window.document;
+        })
+        describe('Element passed does not contain a div.article-body', () => {
+            const dom = new JSDOM(`<html><head></head><body></body></html>`);
+            const window = dom.window;
+            const document = window.document;
+            it('throws an error', () => {
+
+
+                let err;
+                try {
+                    infinite.addNewArticle(document.body, '<html></html>');
+                } catch (e) {
+                    err = e;
+                }
+
+                assert.typeOf(err, 'Error');
+            });
+        });
+        describe('Element passed contains a div.article-comments', () => {
+            infinite.addNewArticle(document.body, ENPage1);
+
+            const articleComments = document.querySelector('div.article-comments');
+            const newDiv = articleComments.nextElementSibling;
+            it('appends a div right after div.article-article-comments', () => {
+                assert.typeOf(newDiv, 'HTMLDivElement');
+            });
+            it(`the div has a class of 'infinite-scroll-story'`, () => {
+                assert.isTrue(newDiv.classList.contains('infinite-scroll-story'));
+            });
+            it('the top-level element of the div is a div.article-wrap', () => {
+                // assert.typeOf(newDiv.firstChild, 'HTMLDivElement');
+                // assert.isTrue(newDiv.classList.contains('article-wrap'));
             });
         });
     });
