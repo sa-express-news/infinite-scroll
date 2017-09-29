@@ -43,7 +43,7 @@ export const deduplicateElementsOnAttribute = (elements: HTMLCollection | NodeLi
     return filteredArray;
 }
 
-// Shamelessly stolen from Stack Overflow:
+//Shamelessly stolen from Stack Overflow:
 // https://stackoverflow.com/questions/2387136/cross-browser-method-to-determine-vertical-scroll-percentage-in-javascript
 
 export const getScrollPercent = (document: Document) => {

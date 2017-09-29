@@ -66,9 +66,19 @@ export const infiniteScroll = async (): Promise<void> => {
     loadJW(document);
     const linkQueue = buildLinkQueue(document.body);
 
-    const firstStory = await utility.fetchPageHTML(linkQueue[0]);
+    const main = async () => {
+        if (utility.getScrollPercent(document) >= 75 && linkQueue.length > 0) {
+            const storyLink = linkQueue.shift();
+            const story = await utility.fetchPageHTML(storyLink);
+            addNewArticle(document.body, story);
+        }
+    }
 
-    addNewArticle(document.body, firstStory);
+    document.addEventListener('scroll', main);
+
+    // addNewArticle(document.body, firstStory);
+
+
 
 }
 
